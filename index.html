@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>チーズアカデミー</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--Google Font:Instrument を読み込み-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <!--Google Font:Zen Kaku Gothic Newを読み込み-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!--favicon-->
+  <link rel="icon" href="img/favicon.ico">
+
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body class="japanese justify-center tracking-wide text-[#464646]"
+  style="background-image: url(https://www.otsuka.co.jp/nmd/50th-anniversary/assets/img/common/pattern1_common.png)" ;>
+  <!-- この中に記述していく -->
+  <!-- ここから下にコードを書く -->
+
+  <!--ヘッダー-->
+  <nav x-data="{ isOpen: false }" class="relative font-medium text-sm">
+
+    <!--すべてのデバイスサイズで共通-->
+    <div class="container px-10 py-5 mx-auto md:flex md:justify-between md:items-center">
+      <div class="flex items-center justify-between">
+        <a href="#">
+          <img class="w-auto h-6 sm:h-7" src="./img/cheese-logo.png" alt="">
+        </a>
+
+        <!-- Mobile menu button -->
+        <div class="flex lg:hidden">
+          <button x-cloak @click="isOpen = !isOpen" type="button"
+            class="text-slate-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+            aria-label="toggle menu">
+            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+      <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full'  ]"
+        class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out  md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center">
+        <div class="flex flex-col md:flex-row md:mx-6 hidden sm:block ">
+          <a class="my-2 text-slate-700 transition-colors duration-300 transform  hover:opacity-40  md:mx-4 md:my-0"
+            href="#About">アカデミーについて</a>
+          <a class="my-2 text-slate-700 transition-colors duration-300 transform  hover:opacity-40  md:mx-4 md:my-0"
+            href="#Course">受講コース</a>
+          <a class="my-2 text-slate-700 transition-colors duration-300 transform  hover:opacity-40  md:mx-4 md:my-0"
+            href="#News">お知らせ</a>
+          <a class="my-2 text-slate-700 transition-colors duration-300 transform  hover:opacity-40  md:mx-4 md:my-0"
+            href="#Access">アクセス</a>
+          <a class="my-2 text-slate-700 transition-colors duration-300 transform  hover:opacity-40 md:mx-4 md:my-0"
+            href="#Contact">お問い合わせ</a>
+        </div>
+
+        </a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!--メインビジュアルー-->
+  <main class=" bg-center bg-cover h-lvh  pb-16 pl-16 pr-16">
+    <div class="flex justify-center items-center w-full bg-center bg-cover h-full rounded-xl p-14"
+      style="background-image: url(https://images.unsplash.com/photo-1604076947037-d909e2f10fca?q=80&w=2731&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+      <div>
+        <h1 class="latin text-[120px] leading-[110%] text-white opacity-70">Create<br>World-changing<br>CHEESE</h1>
+        <h2 class="japanese text-2xl leading-[140%] mt-5 text-white opacity-80 tracking-wide">世界を変えるチーズ職人の養成スクール</h2>
+      </div>
+    </div>
+  </main>
+
+  <!--ABOUT-->
+  <section class="flex justify-center w-full pt-16" id="About">
+    <div class="w-2/3">
+      <h3 class="latin justify-center text-[100px]">About</h3>
+      <p class="justify-center text-base pt-4 leading-9">
+        チーズアカデミーは、チーズ職人養成学校です。<br>
+        チーズの素晴らしさを、自給自足を通じて、できるだけ多くの人に知っていただきたい。<br>
+        そして、食卓にはいつもチーズがあった、あの頃の当たり前をこの手で取り戻したい。<br>
+        そんな思いから、チーズ職人養成学校「チーズアカデミーTOKYO」は歩みを始めています。<br>
+        卒業後、チーズ自給自足のバックアップはもちろんのこと、<br>
+        チーズ職人への就職・転職もサポートします。
+      </p>
+    </div>
+
+  </section>
+
+  <!--COURSE-->
+  <section class="flex justify-center w-full pt-32 pb-32" id="Course">
+    <div class="w-2/3">
+      <h3 class="latin justify-center text-[100px]">Course</h3>
+      <p class="justify-center text-base pt-4 leading-9">
+        未経験からでもスタートができるよう、<br>
+        カリキュラムは、多くの専門家や<br>
+        現役チーズ職人のアドバイスのもと、作られました。
+      </p>
+
+      <!--3つの特徴-->
+      <div class="p-12 bg-[#FCFAF4] rounded-xl mt-14">
+        <h4 class="latin flex justify-center text-5xl mb-10 font-semibold text-[#CFA939] opacity-70 ">What We Do?</h4>
+        <div class="flex justify-center pb-10">
+          <img src="./img/chhese-line.png">
+        </div>
+
+        <div class="flex justify-between space-x-10 divide-x"> <!--divide-x反応しない-->
+          <div>
+            <h5 class="text-2xl pb-4 font-medium leading-9 text-[#6B5513] opacity-70">本格的な農園を使った実地研修</h5>
+            <p class="text-sm leading-7 text-[#6F6139]">チーズアカデミーでは、本格的な農園を使った実地研修を
+              行うことができます。プロとして活躍するチーズ職人も
+              使用するような、広大で環境も整った農園を余すところなく使い、
+              卒業時には本格的なチーズを自分の力で作れる
+              実践力の養成を目指します。</p>
+          </div>
+
+          <div>
+            <h5 class="text-2xl pb-4 font-medium leading-9 text-[#6B5513] opacity-70">必要な知識もしっかりと取得</h5>
+            <p class="text-sm leading-7 text-[#6F6139]">チーズ作りには、しっかりとした食に関する知識が
+              欠かせません。チーズアカデミーでは、一流講師陣による、
+              チーズ作りに必要ないろはを余すところなく学べます。
+              チーズそのものでなく、栄養学全般を学ぶことも
+              可能ですので、チーズ以外への展開も夢ではないでしょう。</p>
+          </div>
+
+          <div>
+            <h5 class="text-2xl pb-4 font-medium leading-9 text-[#6B5513] opacity-70">卒業制作はティスティング審査あり</h5>
+            <p class="text-sm leading-7 text-[#6F6139]">チーズアカデミーでは最後の2ヶ月間で卒業制作を実施。
+              卒業制作として、チーズ作りを実際に行います。卒業後、
+              一般参加によるティスティング審査があるため、作り手の
+              目線だけでなく、消費者の目線から、卒業制作作品としての
+              チーズを、しっかりと評価いただくことができます。</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!--NEWS-->
+  <section class="justify-center" id="News">
+    <div class="justify-center w-5/6 rounded-xl container px-10 pt-16 py-40 mx-auto space-y-14">
+      <div class="flex justify-center items-center">
+        <h3 class="latin text-[80px] font-medium text-gray-800 capitalize  dark:text-white">NEWS</h3>
+      </div>
+
+      <div class="space-y-10">
+
+        <!--1つ目のNews-->
+        <div class="flex justify-center">
+          <img class="object-cover w-[240px] rounded-xl h-[180px]" src="./img/news_img.jpg" alt="">
+
+          <div class="w-1/2 mx-8">
+            <p class="text-sm text-[#4F4E4E] opacity-60 uppercase">2024.10.10</p>
+
+            <a href="#" class="block mt-2 text-xl font-medium text-[#4F4E4E] hover:underline dark:text-white">
+              「Kosuge Pizza」が渋谷でオープンしました
+            </a>
+
+            <p class="mt-3 text-sm text-[#4F4E4E] opacity-70 dark:text-gray-300 md:text-sm">
+              チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が渋谷でオープンしました
+            </p>
+
+            <div class="flex items-center mt-6">
+              <img class="object-cover object-center w-10 h-10 rounded-full"
+                src="https://ca.slack-edge.com/T07NT1K6DEY-U07NRQSR5AS-2eb0d3c3bbdf-512" alt="">
+
+
+              <div class="mx-4">
+                <h1 class="text-sm text-[#4F4E4E] font-medium">まえたつ</h1>
+                <p class="text-sm text-[#4F4E4E] opacity-70">DEV28期 担任</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--1つ目のNewsおわり-->
+
+        <!--2つ目のNews始まり-->
+        <div class="flex justify-center">
+          <img class="object-cover w-[240px] rounded-xl h-[180px]" src="./img/news_img.jpg" alt="">
+
+          <div class="w-1/2 mx-8">
+            <p class="text-sm text-[#4F4E4E] opacity-60 uppercase">2024.10.10</p>
+
+            <a href="#" class="block mt-2 text-xl font-medium text-[#4F4E4E] hover:underline">
+              「Kosuge Pizza」が渋谷でオープンしました
+            </a>
+
+            <p class="mt-3 text-sm text-[#4F4E4E] opacity-70  md:text-sm">
+              チーズアカデミー卒業生のコスゲさんによるチーズだけをふんだんに使用した話題のピザ屋「Kosuge Pizza」が渋谷でオープンしました
+            </p>
+
+            <div class="flex items-center mt-6">
+              <img class="object-cover object-center w-10 h-10 rounded-full"
+                src="https://ca.slack-edge.com/T07NT1K6DEY-U07NRQSR5AS-2eb0d3c3bbdf-512" alt="">
+
+              <div class="mx-4">
+                <h1 class="text-sm text-[#4F4E4E] font-medium">まえたつ</h1>
+                <p class="text-sm text-[#4F4E4E] opacity-70">DEV28期 担任</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--2つ目のニュース終わり-->
+
+    </div>
+  </section>
+
+
+  <!--Access-->
+  <section class="justify-center w-full" id="Access">
+
+    <div class="w-full h-[500px]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.392345934567!2d139.71127647574633!3d35.66734013073704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d0012f10e49%3A0xd25b5586f6b49e2b!2z6Z2S5pyL44OT44Or!5e0!3m2!1sja!2sjp!4v1729423412954!5m2!1sja!2sjp"
+        width="100%" height="600"
+        style="border:0; filter: sepia(20%); -webkit-filter: sepia(20%);; -webkit-filter: grayscale(100%);"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="flex justify-center p-40 mt-16">
+      <div class="flex item-center w-2/3 justify-center">
+        <div class=>
+          <h3 class="latin justify-center text-[80px] leading-[100%] pr-16 opacity-40">Access</h3>
+        </div>
+        <div class="">
+          <img src="./img/cheese-logo.png">
+          <p class="justify-center text-sm pt-4 leading-6">
+            東京メトロ 表参道駅<br>b3出口から徒歩5分</p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--縦を中央揃えにしたいのにできない-->
+
+  </section>
+
+  <!--Contact-->
+  <section class="bg-white" id="Contact">
+    <div class="container w-2/3 px-6 py-40 mx-auto">
+      <div>
+        <h3 class="latin text-[100px] ">Contact us</h3>
+        <p class="mt-3 leading-9">
+          ぜひ1度、足を運んでみませんか。<br>
+          説明会は随時開催中。<br>
+          その他、お問い合わせもお気軽にどうぞ。お待ちしております。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-12 mt-14">
+        <div class="grid grid-cols-1 gap-12 py-10">
+          <div>
+            <span class="inline-block p-3 text-[#CFA939] rounded-full bg-orange-100/50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </span>
+
+            <h4 class="latin mt-4 text-xl font-medium">Email</h4>
+            <p class="mt-2 text-sm">dummy@cheeseacademy.tokyo</p>
+          </div>
+
+          <div>
+            <span class="inline-block p-3 text-[#CFA939] rounded-full bg-orange-100/50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </span>
+
+            <h4 class="latin mt-4 text-xl font-medium">Office</h4>
+            <p class="mt-2 text-sm">〒107-0061<br>東京都港区北青山3-5-6<br>青朋ビル 2F</p>
+          </div>
+
+          <div>
+            <span class="inline-block p-3 text-[#CFA939] rounded-full bg-orange-100/50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </span>
+
+            <h4 class="latin mt-4 text-xl font-medium">TEL / FAX</h4>
+            <p class="mt-2 text-sm">03(5413)5045</p>
+          </div>
+        </div>
+
+        <div class="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+          <form>
+            <div class="-mx-2 md:items-center md:flex">
+              <div class="flex-1 px-2">
+                <label class="block mb-2 text-sm font-semibold opacity-60">姓</label>
+                <input type="text" placeholder="チーズ"
+                  class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+              </div>
+
+              <div class="flex-1 px-2 mt-4 md:mt-0">
+                <label class="block mb-2 text-sm font-semibold opacity-60">名</label>
+                <input type="text" placeholder="太郎"
+                  class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <label class="block mb-2 text-sm font-semibold opacity-60">Email</label>
+              <input type="email" placeholder="cheese@example.com"
+                class="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+            </div>
+
+            <div class="mt-8">
+              <label class="block mb-2 text-sm font-semibold opacity-60">志望動機</label>
+              <div class="flex items-center mb-3">
+                <input checked id="checked-checkbox" type="checkbox" value=""
+                  class="w-4 h-4  bg-gray-100 border-gray-100 rounded focus:ring-orange-500">
+                <label for="checked-checkbox" class="ms-2 text-xs font-medium">起業したい</label>
+              </div>
+              <div class="flex items-center mb-3">
+                <input id="default-checkbox" type="checkbox" value=""
+                  class="w-4 h-4  bg-gray-100 border-gray-100 rounded focus:ring-blue-500">
+                <label for="default-checkbox" class="ms-2 text-xs font-medium">チーズ企業に就職・転職したい</label>
+              </div>
+              <div class="flex items-center mb-3">
+                <input id="default-checkbox" type="checkbox" value=""
+                  class="w-4 h-4  bg-gray-100 border-gray-100 rounded focus:ring-blue-500">
+                <label for="default-checkbox" class="ms-2 text-xs font-medium">チーズの教養を身に付けたい</label>
+              </div>
+
+              <!--checkboxのborderの変え方わからない-->
+
+            </div>
+
+
+
+
+            <div class="w-full mt-8">
+              <label class="block mb-2 text-sm font-semibold opacity-60">その他お問い合わせ</label>
+              <textarea
+                class="block w-full h-20 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                placeholder="ご自由にご入力ください"></textarea>
+            </div>
+
+
+
+            <button
+              class="w-full px-6 py-3 mt-8 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#464646] rounded-lg hover:opacity-70 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+              送信する
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer -->
+  <footer class="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-gray-900">
+    <div class="container px-10 py-6">
+
+      <div class="flex flex-col items-center justify-between md:flex-row">
+        <a href="#">
+          <img class="w-auto h-7" src="./img/cheese-logo.png" alt="">
+        </a>
+
+        <div class="flex mt-4 md:m-0">
+          <div class="-mx-4">
+            <a href="#About"
+              class="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:opacity-40">アカデミーについて</a>
+            <a href="#Course"
+              class="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:opacity-40">受講コース</a>
+            <a href="#News"
+              class="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:opacity-40">お知らせ</a>
+            <a href="#Access"
+              class="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:opacity-40">アクセス</a>
+            <a href="#Contact"
+              class="px-4 text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:opacity-40">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tailwind.config.js"></script>
+  <!-- 読み込んでくれない。なぜ-->
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+/* ここから下に記載していく */
+
+
+/* CSSファイル */
+.japanese {
+    font-family: 'Zen+Kaku+Gothic+New', sans-serif;
+    /* 日本語用フォント */
+}
+
+.latin {
+    font-family: 'Instrument Serif', sans-serif;
+    /* 欧文用フォント */
+}
